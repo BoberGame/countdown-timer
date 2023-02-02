@@ -1,0 +1,36 @@
+.timer {
+  display: flex;
+  align-items: center;
+  column-gap: calc(16px + 12 * ((100vw - 320px) / (1920 - 320)));
+}
+
+.timer-item {
+  display: flex;
+  position: relative;
+
+  &:not(:last-child) {
+    &::after {
+      content: ':';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+
+      font-size: calc(55px + 55 * ((100vw - 320px) / (1920 - 320)));
+      color: #000;
+    }
+  }
+}
+
+.timer-digit {
+  width: 1.16em;
+  padding: 0.15em 0.2em;
+
+  font-size: calc(36px + 54 * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 0.04em 0.04em rgba(0, 0, 0, .25);
+  border-radius: .15em;
+}

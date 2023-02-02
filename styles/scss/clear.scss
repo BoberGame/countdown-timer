@@ -1,0 +1,30 @@
+.timer {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.timer-item {
+  position: relative;
+}
+
+.timer-item {
+  &:not(:last-child) {
+    &::after {
+      content: ':';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+
+      font-size: calc(35px + 50 * (100vw - 320px) / 1600);
+      color: #000;
+    }
+  }
+}
+
+.timer-digit {
+  display: inline-block;
+  font-size: calc(36px + 54 * (100vw - 320px) / 1600);
+  color: #000;
+}
