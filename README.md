@@ -18,9 +18,15 @@ The timer currently has two modes of operation:
 <div class="timer"></div>
 ```
 
-### 2. Import css in head tag:
+### 2. Import styles:
+For **css:**
 ```html
 <link href="countdown-timer/styles/css/style.css" rel="stylesheet">
+```
+
+For **scss:**
+```scss
+@import "countdown-timer/styles/scss/style.scss";
 ```
 
 ### 3. Import CountdownTimer:
@@ -38,4 +44,44 @@ const timer = new CountdownTimer('timer-className', {
   autoGenerate: true,
 });
 timer.init();
+```
+
+## API
+Initialization timer:
+```js
+timer.init()
+```
+Destroy timer:
+```js
+timer.destroy()
+```
+
+Get the formatted time as object:
+```js
+timer.time
+
+result = {
+  hours: hh,
+  minutes: mm,
+  seconds: ss,
+}
+```
+
+## HTML structure of timer
+If you have set autoGenerate: false, you need to put this code:
+```html
+<div class="timer">
+  <div class="timer-item timer-hours">
+    <span class="timer-digit"></span>
+    <span class="timer-digit"></span>
+  </div>
+  <div class="timer-item timer-minutes">
+    <span class="timer-digit"></span>
+    <span class="timer-digit"></span>
+  </div>
+  <div class="timer-item timer-seconds">
+    <span class="timer-digit"></span>
+    <span class="timer-digit"></span>
+  </div>
+</div>;
 ```
